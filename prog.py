@@ -1,5 +1,6 @@
 import discord
 import BCF
+import commands
 
 with open('tokenTest','r') as f:
 	TOKEN = f.read()
@@ -14,9 +15,16 @@ async def on_message(message):
 		return
 
 	data = BCF.headline() + '\t' + str(message.author) + '\t'
-
+	chat = []
+	dat = msg = ''
 	if message.content.startswith('?'):
-		
+		dat,msg = commands.hub(message)
+	data += dat
+	chat += msg
+	for msg in chat:	
+		await client.send_message(msg[0],msg[1])
+	BCF.log(data)
+
 
 @client.event
 async def on_ready():

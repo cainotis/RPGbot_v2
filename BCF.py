@@ -18,6 +18,11 @@ def headline():
 	data += str(t[5])+'\t'
 	return data
 
+def log(data):
+	with open('datalog','a') as f:
+		f.write(data + '\n')
+	return 
+
 # if this is the main module
 if __name__ == '__main__':
 	# print the documentation
