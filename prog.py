@@ -2,7 +2,7 @@ import discord
 import BCF
 import commands
 
-with open('tokenTest','r') as f:
+with open('tokenTest.txt','r') as f:
 	TOKEN = f.read()
 
 client = discord.Client()
