@@ -13,3 +13,6 @@ def list(message):
 	chat = [[message.channel,msg]]
 	return data,chat
 
+if __name__ == '__main__':
+	pass
+	#fazer uma função para modificar as coisas do help
