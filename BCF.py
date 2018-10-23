@@ -1,5 +1,10 @@
 
 """Basic Control Functions(BFC) is the module which have the functions that help the control and the maintenance of the bots made with this system
+	
+	headline() : make the date format for the log
+	log() : save the data to the datalog.txt
+
+Examples:
 """
 
 import time
@@ -27,4 +32,5 @@ def log(data):
 if __name__ == '__main__':
 	# print the documentation
 	print(__doc__)
-	print('headline:', headline())
+	# and the examples 
+	print('\theadline() :', headline())

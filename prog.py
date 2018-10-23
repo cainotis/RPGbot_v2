@@ -1,6 +1,7 @@
 import discord
 import BCF
 import commands
+import json
 
 with open('tokenTest.txt','r') as f:
 	TOKEN = f.read()
@@ -22,7 +23,7 @@ async def on_message(message):
 	data += dat
 	chat += msg
 	for msg in chat:	
-		await client.send_message(msg[0],msg[1])
+		await client.send_message(msg[0],msg[1].format(message))
 	BCF.log(data)
 
 
