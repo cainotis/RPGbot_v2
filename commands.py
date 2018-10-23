@@ -1,12 +1,18 @@
+"""commands.py is the module which control the commands that the bot do. It chose which module respond to every command it receives
+"""
 
 import help
+import hello
 
 def hub(message):
 	text = ' '.join(message.content[1:].lower().split())
 	data = ''
 	chat = []
 	dat = msg = ''
-	if text == 'help':
+	if text == 'hello':
+		data += 'hello\t'
+		dat,msg = hello.greeting(message)
+	elif text == 'help':
 		data += 'help\t'
 		dat,msg = help.list(message)
 	data += dat
@@ -24,4 +30,5 @@ if __name__ == '__main__':
 			self.author  = 'author'
 			self.server  = 'server'
 
-	print(hub(message()))
+	#print(hub(message()))
+	#do examples for each command
