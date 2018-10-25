@@ -14,7 +14,7 @@ def hub(message):
 		data += 'hello\t'
 		dat,msg = hello.greeting(message)
 	elif text == 'help':
-		data += 'help\t'
+		data += 'help \t'
 		dat,msg = help.list(message)
 	else :
 		data += 'not found\t'
