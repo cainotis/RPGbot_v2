@@ -1,8 +1,9 @@
 """commands.py is the module which control the commands that the bot do. It chose which module respond to every command it receives
 """
 
-import help
+import error
 import hello
+import help
 
 def hub(message):
 	text = ' '.join(message.content[1:].lower().split())
@@ -15,6 +16,9 @@ def hub(message):
 	elif text == 'help':
 		data += 'help\t'
 		dat,msg = help.list(message)
+	else :
+		data += 'not found\t'
+		dat,msg = error.commandNotFound(message)
 	data += dat
 	chat += msg
 	return data,chat
