@@ -1,5 +1,5 @@
 import discord
-import BCF
+import basic
 import commands
 import json
 
@@ -15,7 +15,7 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
-	data = BCF.headline() + '\t' + str(message.author) + '\t'
+	data = basic.date() + '\t' + str(message.author) + '\t'
 	chat = []
 	dat = msg = ''
 	if message.content.startswith('?'):
@@ -24,7 +24,7 @@ async def on_message(message):
 	chat += msg
 	for msg in chat:	
 		await client.send_message(msg[0],msg[1].format(message))
-	BCF.log(data)
+	basic.log(data)
 
 
 @client.event
