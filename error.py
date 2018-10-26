@@ -1,13 +1,13 @@
-"""hello.py is the module which responds to the hello command.
+"""error.py is the module which controls all the errors messages of the bot
 This module was not made to run at its own
 """
 
 import basic
 
-helloList = basic.loadJson('./Messages/hello.json')
+errorMessagens = basic.loadJson("./Messages/error.json")
 
-def greeting(message):
-	dat,msg = basic.chooseText(helloList)
+def commandNotFound(message):
+	dat,msg  = basic.chooseText(errorMessagens["command not found"])
 	data = "{0}\t".format(dat)
 	chat = [[message.channel,msg]]
 	return data,chat

@@ -1,0 +1,8 @@
+[
+	"Hi",
+	"Hi {0.author.mention}",
+	"hi",
+	"Hello",
+	"Hello {0.author.mention}",
+	"hello"
+]

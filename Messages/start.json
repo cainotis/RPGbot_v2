@@ -1,0 +1,10 @@
+{
+	"new":[
+		"Olá {0.author.mention}, prazer em te conhecer",
+		"Bem vindo {0.author.mention}"
+	],
+	"old":[
+		"Nos já nos conhecemos, {0}",
+		"Que estranho, {0}, já te conheco desde {1[initDate]}"
+	]
+}

@@ -12,4 +12,4 @@
 
 ##### Important things
 
-- BCF is for Basic Control Functions
+- basic is for the basics control functions
