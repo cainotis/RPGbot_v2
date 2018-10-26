@@ -2,16 +2,13 @@
 This module was not made to run at its own
 """
 
-import json
-import random
+import basic
 
-with open("errorMessagens.json", 'r') as f:
-	errorMessagens = json.load(f)
+errorMessagens = basic.loadJson("./Messages/error.json")
 
 def commandNotFound(message):
-	rand = random.randint(0,len(errorMessagens["command not found"])-1)
-	msg  = errorMessagens["command not found"][rand]
-	data = "{0}\t".format(rand)
+	dat,msg  = basic.chooseText(errorMessagens["command not found"])
+	data = "{0}\t".format(dat)
 	chat = [[message.channel,msg]]
 	return data,chat
 

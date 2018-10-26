@@ -1,6 +1,7 @@
 {
 	"id": null,
-	"GM": false, 
+	"GM": false,
+	"initDate" : null,
 	"personagens": {
 		"N": 0
 	}

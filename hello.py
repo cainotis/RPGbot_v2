@@ -2,16 +2,13 @@
 This module was not made to run at its own
 """
 
-import json
-import random
+import basic
 
-with open('hello.json','r') as f:
-	helloList = json.load(f)
+helloList = basic.loadJson('./Messages/hello.json')
 
 def greeting(message):
-	rand = random.randint(0,len(helloList)-1)
-	msg  = helloList[rand]
-	data = "{0}\t".format(rand)
+	dat,msg = basic.chooseText(helloList)
+	data = "{0}\t".format(dat)
 	chat = [[message.channel,msg]]
 	return data,chat
 

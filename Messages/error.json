@@ -2,6 +2,7 @@
 	"command not found":[
 		"Comando não existente", 
 		"O comando não foi achado", 
-		"Comando invalido"
+		"Comando inválido",
+		"Erro comando não reconhecido"
 	]
 }

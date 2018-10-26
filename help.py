@@ -2,16 +2,15 @@
 This modulo was not made to run at its own, but it will have a function that will run when this is the main module to update the command list for futures helps
 """
 
-import json
+import basic
 
-with open('commands.json','r') as f:
-	commands = json.load(f)
+commands = basic.loadJson('./Messages/commands.json')
 
 def list(message):
 	data = ' list\t'
 	msg  = "The following commands are available: ```\n"
 	for key in commands:
-		msg += '\t' + key + ": " + commands[key ] + '\n'
+		msg += '\t' + key + ": " + commands[key] + '\n'
 	msg += "```"
 	chat = [[message.channel,msg]]
 	return data,chat
