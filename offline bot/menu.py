@@ -5,9 +5,11 @@ def menu_start():
 	if boot_type == 'yes':
 		list_handling.reset_list('character')
 		list_handling.reset_list('object')
+		list_handling.reset_list('action')
 	list_handling.reload_list('character')
 	list_handling.reload_list('object')
-	menu = "help\nexit\nreset list\nreload list\nprint list\nnew character\ndelete character\nchange stats\nprint character\nnew object\n"
+	list_handling.reload_list('action')
+	menu = "help\nexit\nreset list\nreload list\nprint list\nnew character\ndelete character\nchange stats\nprint character\nnew object\nprint object\nassign object\nequip object\ndelete object\nnew action\n"
 	print("help for command list, exit to quit\n")
 	while(True):
 		INPUT = input()
@@ -16,17 +18,17 @@ def menu_start():
 			print(menu)
 
 		elif INPUT == "reset list":
-			type_in = input("Character, object, weapon, armor?\n").lower()
+			type_in = input("Character, action, object, weapon, armor, item?\n").lower()
 			list_handling.reset_list(type_in)
 			list_handling.print_list(type_in, "short")
 
 		elif INPUT == "reload list":
-			type_in = input("Character, object?\n").lower()
+			type_in = input("Character, action, object?\n").lower()
 			list_handling.reload_list(type_in)
 			print(type_in, "list loaded\n")
 
 		elif INPUT == "print list":
-			type_in = input("Character, object, weapon, armor?\n").lower()
+			type_in = input("Character, action, object, weapon, armor, item?\n").lower()
 			len_in = input("Short or long?\n")
 			list_handling.print_list(type_in, len_in)
 
@@ -54,6 +56,27 @@ def menu_start():
 		elif INPUT == "new object":
 			type_in = input("Type of object: ")
 			list_handling.new_object(type_in)
+
+		elif INPUT == "print object":
+			objName = input("Input name: ")
+			list_handling.print_object(objName)
+
+		elif INPUT == "assign object":
+			objName = input("Input object name: ")
+			playerName = input("Input player name: ")
+			list_handling.assign_object(objName, playerName)
+
+		elif INPUT == "equip object":
+			objName = input("Input object name: ")
+			playerName = input("Input player name: ")
+			list_handling.equip_object(objName, playerName)
+
+		elif INPUT == "delete object":
+			objName = input("Input name: ")
+			list_handling.delete_object(objName)
+
+		elif INPUT == "new action":
+			list_handling.new_action()
 
 		elif INPUT == "exit":
 			print("exiting\n")

@@ -10,8 +10,8 @@ def profile_description():
 	STR (damage, creating)
 	DEX (damage, creating)
 	INT (damage, creating)
-	AGI (actions, hitRate, dodgeRate)
-	PER (critRate, hitRate, dodgeRate)
+	AGI (offensive actions, defensive actions, hitRate, dodgeRate)
+	PER (defensive actions, critRate, hitRate, dodgeRate)
 	WeaponMastery (Specific - 100%, Namespace - 90%, Archetype - 75%, Type - 50%, Range - 25%)
 		Namespace: Short Sword, Long Sword, Long Bow, ...
 		Archetype: Sword, Bow, Mace, ...
@@ -26,6 +26,3 @@ def profile_description():
 					   Solid (Ground, Metal, Rock, ...)
 	"""
 
-def scale(var, currectLower, currentUpper, targetLower, targetUpper):
-	return targetLower+var*(currentUpper-currentLower)/(targetUpper-targetLower)
-	#
