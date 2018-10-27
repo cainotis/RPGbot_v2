@@ -7,7 +7,7 @@ import basic
 errorMessagens = basic.loadJson("./Messages/error.json")
 
 def commandNotFound(message):
-	dat,msg  = basic.chooseText(errorMessagens["command not found"])
+	dat,msg  = basic.choose(errorMessagens["command not found"])
 	data = "{0}\t".format(dat)
 	chat = [[message.channel,msg]]
 	return data,chat

@@ -9,8 +9,8 @@ commands = basic.loadJson('./Messages/commands.json')
 def list(message):
 	data = ' list\t'
 	msg  = "The following commands are available: ```\n"
-	for key in commands:
-		msg += '\t' + key + ": " + commands[key] + '\n'
+	for line in commands["common"]:
+		msg += '\t{0}\n'.format(line)
 	msg += "```"
 	chat = [[message.channel,msg]]
 	return data,chat

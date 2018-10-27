@@ -15,7 +15,7 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
-	data = basic.date() + '\t' + str(message.author) + '\t'
+	data = basic.headline(message)
 	chat = []
 	dat = msg = ''
 	if message.content.startswith('?'):

@@ -2,9 +2,11 @@
 """basic.py is the module which was the basics control functions which are functions that help the control and the maintenance the bots made with this system
 	
 	date() : make the date format for the log
-	log() : save the data to the datalog.txt
+	headline() : make the headline for the data on the datalog
+	log() : save the data to the datalog
 	loadJson(file) : load and return an json file
 	saveJson(file,data) : load to a json file the data
+	choose(list) : choose a random element from the list and return it index and it
 
 Examples:
 """
@@ -27,6 +29,16 @@ def date():
 	data += str(t[5])+'\t'
 	return data
 
+def headline(message):
+	data = date()
+	data += "{0}\t".format(str(message.id))
+	data += "{0}\t".format(str(message.author))
+	size = len(str(message.author))
+	while size < 15:
+		data += '\t'
+		size += 5
+	return data
+
 def log(data):
 	with open('./Data/datalog','a') as f:
 		f.write(data + '\n')
@@ -41,9 +53,10 @@ def saveJson(file,data):
 		f.write(json.dumps(data))
 	return
 
-def chooseText(array):
+def choose(array):
 	rand = random.randint(0,len(array)-1)
 	return rand,array[rand]
+
 
 # if this is the main module
 if __name__ == '__main__':

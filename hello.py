@@ -7,7 +7,7 @@ import basic
 helloList = basic.loadJson('./Messages/hello.json')
 
 def greeting(message):
-	dat,msg = basic.chooseText(helloList)
+	dat,msg = basic.choose(helloList)
 	data = "{0}\t".format(dat)
 	chat = [[message.channel,msg]]
 	return data,chat
