@@ -1,6 +1,6 @@
 import discord
 import basic
-import commands
+import hub
 import json
 
 with open('tokenTest.txt','r') as f:
@@ -15,11 +15,11 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
-	data = basic.date() + '\t' + str(message.author) + '\t'
+	data = basic.headline(message)
 	chat = []
 	dat = msg = ''
 	if message.content.startswith('?'):
-		dat,msg = commands.hub(message)
+		dat,msg = hub.commands(message)
 	data += dat
 	chat += msg
 	for msg in chat:	

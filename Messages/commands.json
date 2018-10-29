@@ -1,5 +1,20 @@
 {
-"?hello": "Faz uma a\u00e7\u00e3o que nem vale a pena descrever", 
-"?help" : "Fornece informa\u00e7\u00e3o sobre os comandos disponiveis",
-"?start": "Inicia o usuário ao bot"
+	"common" : [
+		"?hello : Faz uma a\u00e7\u00e3o que nem vale a pena descrever", 
+		"?help  : Fornece informa\u00e7\u00e3o sobre os comandos disponiveis",
+		"?start : Inicia o usuário ao bot"
+	],
+	"private" : [
+
+	],
+	"GM" : [
+
+	],
+	"command" : [
+		"hello",
+		"help",
+		"start",
+
+		"list users"
+	]
 }

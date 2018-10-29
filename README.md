@@ -7,8 +7,7 @@
 
 ##### ToDo list
 
-- add a function in help.py to add a knew command on the ?help/commands.json
-- discuss about what is need in the user's profile
+- finish the function to define if the user can use that function on that moment, will have some that can only be used on privates chats
 
 ##### Important things
 
