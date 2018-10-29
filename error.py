@@ -1,5 +1,8 @@
 """error.py is the module which controls all the errors messages of the bot
 This module was not made to run at its own
+
+	commandNotFound(message): print the error message when the command was not found
+
 """
 
 import basic

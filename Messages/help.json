@@ -1,0 +1,16 @@
+{
+	"list" : {
+		"common" : [
+			"The following commands are available: "
+		],
+		"server" : [
+			"*May exist some commands that can only exist in privates conversations*"
+		],
+		"private" : [
+			"Some other commands that are available: "
+		],
+		"GM" : [
+			"Here are the Game Master commands: "
+		]
+	}
+}

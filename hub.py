@@ -3,10 +3,10 @@
 
 import error
 import hello
-import help
+import command
 import user
 
-def hub(message):
+def commands(message):
 	text = ' '.join(message.content[1:].lower().split())
 	data = ''
 	chat = []
@@ -16,12 +16,30 @@ def hub(message):
 		dat,msg = hello.greeting(message)
 	elif text == 'help':
 		data += 'help \t'
-		dat,msg = help.list(message)
+		dat,msg = command.list(message)
 	elif text == 'start':
 		data += 'start\t'
 		dat,msg = user.start(message)
+	#### if the message is not on server and the user exist
+	elif (not message.server) and user.exist(message.author):
+		if user.gm(message.author):
+			if text == 'list users':
+				data += 'list \t'
+				dat,msg = user.list(message)
+			else :
+				data += 'NfoundGM\t'
+				dat,msg = error.commandNotFound(message)
+		else :
+			if command.exist(text):
+				data += 'denied\t'
+			else :
+				data += 'not found\t'
+			dat,msg = error.commandNotFound(message)
 	else :
-		data += 'not found\t'
+		if command.exist(text):
+			data += 'denied\t'
+		else :
+			data += 'not found\t'
 		dat,msg = error.commandNotFound(message)
 	data += dat
 	chat += msg
@@ -38,5 +56,5 @@ if __name__ == '__main__':
 			self.author  = 'author'
 			self.server  = 'server'
 
-	print(hub(message()))
+	#print(hub(message()))
 	#do examples for each command
